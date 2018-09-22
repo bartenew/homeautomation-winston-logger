@@ -1,0 +1,31 @@
+{
+  "name": "homeautomation-winston-logger",
+  "version": "0.0.1",
+  "description": "",
+  "license": "ISC",
+  "author": {
+    "name": "Paolo Tremadio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paolotremadio/homeautomation-winston-logger.git"
+  },
+  "bugs": {
+    "url": "http://github.com/paolotremadio/homeautomation-winston-logger/issues"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  },
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js . --ext .js"
+  }
+}
