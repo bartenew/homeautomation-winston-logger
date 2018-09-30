@@ -1,6 +1,6 @@
 const winston = require('winston');
 
-module.exports = (logFile, debugMode) =>
+module.exports = (logFile, debugMode, filesize = 10485760) =>
   winston.createLogger({
     level: 'info',
     format: winston.format.combine(
@@ -10,7 +10,12 @@ module.exports = (logFile, debugMode) =>
       winston.format.json(),
     ),
     transports: [
-      new winston.transports.File({ filename: logFile, level: 'info' }),
+      new winston.transports.File({
+        filename: logFile,
+        level: 'info',
+        maxsize: filesize,
+        zippedArchive: true,
+      }),
       debugMode ? new winston.transports.Console({ level: 'debug' }) : false,
     ].filter(x => x),
   });
